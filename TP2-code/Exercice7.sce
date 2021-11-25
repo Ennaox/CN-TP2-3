@@ -5,10 +5,12 @@ b = A * xex
 
 x = A\b
 
-err_av = norm(x-xex)/norm(x)
-err_ar = norm(b-A*xex)/(norm(A)*norm(xex))
+err_av = norm(xex-x)/norm(xex)
+err_ar = norm(b-A*x)/(norm(A)*norm(x))
 
+disp("err_av")
 disp(err_av)
+disp("err_ar")
 disp(err_ar)
 
 A = rand(100,100)
@@ -18,10 +20,12 @@ b = A * xex
 
 x = A\b
 
-err_av = norm(x-xex)/norm(x)
-err_ar = norm(b-A*xex)/(norm(A)*norm(xex))
+err_av = norm(xex-x)/norm(xex)
+err_ar = norm(b-A*x)/(norm(A)*norm(x))
 
+disp("err_av")
 disp(err_av)
+disp("err_ar")
 disp(err_ar)
 
 A = rand(1000,1000)
@@ -31,8 +35,27 @@ b = A * xex
 
 x = A\b
 
-err_av = norm(x-xex)/norm(x)
-err_ar = norm(b-A*xex)/(norm(A)*norm(xex))
+err_av = norm(xex-x)/norm(xex)
+err_ar = norm(b-A*x)/(norm(A)*norm(x))
 
+disp("err_av")
 disp(err_av)
+disp("err_ar")
 disp(err_ar)
+
+/* Exécution trop longue
+A = rand(10000,10000)
+xex = rand(10000,1)
+
+b = A * xex
+
+x = A\b
+
+err_av = norm(xex-x)/norm(xex)
+err_ar = norm(b-A*x)/(norm(A)*norm(x))
+
+disp("err_av")
+disp(err_av)
+disp("err_ar")
+disp(err_ar)
+*/
