@@ -1,6 +1,6 @@
-exec ./matmat1b.sci
-exec ./matmat2b.sci
-exec ./matmat3b.sci
+exec matmat1b.sci
+exec matmat2b.sci
+exec matmat3b.sci
 
 //Mesure du temps pour des matrice de tailles 10x10
 i = 10;
