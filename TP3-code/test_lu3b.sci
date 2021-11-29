@@ -7,4 +7,4 @@ A = rand(TAILLE,TAILLE) + ones(TAILLE,TAILLE);
 [L,U] = mylu3b(A);
 
 verif_LU = A - L*U;
-disp(verif_LU);
+disp(norm(verif_LU));
