@@ -4,8 +4,8 @@ exec usolve.sci
 TAILLE_MAX = 100;
 ITER_MAX = 100;
 
-[fic1, mod1] = mopen("l_solve.dat", "w");
-[fic2, mod2] = mopen("u_solve.dat", "w");
+[fic1, mod1] = mopen("data/l_solve.dat", "w");
+[fic2, mod2] = mopen("data/u_solve.dat", "w");
 
 for TAILLE = 1:TAILLE_MAX
     err_av1 = 0;

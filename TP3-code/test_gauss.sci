@@ -2,7 +2,7 @@ exec gausskij3b.sci
 
 TAILLE_MAX = 20;
 ITER_MAX = 1000;
-[fic, mod] = mopen("gaussijk.dat", "w");
+[fic, mod] = mopen("data/gaussijk.dat", "w");
 for TAILLE = 1:TAILLE_MAX
     err_av = 0;
     err_ar = 0;
