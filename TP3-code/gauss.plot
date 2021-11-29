@@ -12,7 +12,7 @@ plot "data/gausskij.dat" using 4:1 t "Erreur Avant gausskij" w lp;
 set output "image/cond_gausskij.png"
 set ylabel "Conditionnement"
 
-plot "data/gaussijk.dat" using 4:3 t "Conditionnement gausskij" w lp;
+plot "data/gausskij.dat" using 4:3 t "Conditionnement gausskij" w lp;
 
 set output "image/err_ar_gausskij.png"
 

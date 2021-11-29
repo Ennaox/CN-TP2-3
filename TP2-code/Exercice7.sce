@@ -1,61 +1,23 @@
-A = rand(3,3)
-xex = rand(3,1)
+ITER = 20;
+MAX_TAILLE = 1010;
 
-b = A * xex
+[fic,mod] = mopen("data/Exercice7.dat", "w");
 
-x = A\b
+for TAILLE = 10:100:MAX_TAILLE
+    err_av = 0;
+    err_ar = 0;
+    cond1 = 0;
+    disp(string(TAILLE)+"/"+string(MAX_TAILLE))
+    for i = 1 : ITER
+        A = rand(TAILLE,TAILLE) + ones(TAILLE,TAILLE);
+        xex = rand(TAILLE,1) + ones(TAILLE,1);
+        b = A*xex;
+        x = A\b;
+        err_av = err_av + norm(xex - x)/norm(xex);
+        err_ar = err_ar + norm(b - A*x)/(norm(A)*norm(x));
+        cond1 = cond1 + cond(A);
+    end
 
-err_av = norm(xex-x)/norm(xex)
-err_ar = norm(b-A*x)/(norm(A)*norm(x))
-
-disp("err_av")
-disp(err_av)
-disp("err_ar")
-disp(err_ar)
-
-A = rand(100,100)
-xex = rand(100,1)
-
-b = A * xex
-
-x = A\b
-
-err_av = norm(xex-x)/norm(xex)
-err_ar = norm(b-A*x)/(norm(A)*norm(x))
-
-disp("err_av")
-disp(err_av)
-disp("err_ar")
-disp(err_ar)
-
-A = rand(1000,1000)
-xex = rand(1000,1)
-
-b = A * xex
-
-x = A\b
-
-err_av = norm(xex-x)/norm(xex)
-err_ar = norm(b-A*x)/(norm(A)*norm(x))
-
-disp("err_av")
-disp(err_av)
-disp("err_ar")
-disp(err_ar)
-
-/* Exécution trop longue
-A = rand(10000,10000)
-xex = rand(10000,1)
-
-b = A * xex
-
-x = A\b
-
-err_av = norm(xex-x)/norm(xex)
-err_ar = norm(b-A*x)/(norm(A)*norm(x))
-
-disp("err_av")
-disp(err_av)
-disp("err_ar")
-disp(err_ar)
-*/
+   mfprintf(fic, "%.17lf %.17lf %.17lf %d\n", err_av/ITER, err_ar/ITER, cond1/ITER, TAILLE);
+end
+mclose(fic);
